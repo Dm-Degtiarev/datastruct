@@ -1,16 +1,22 @@
-# This is a sample Python script.
-
-# Press Ctrl+Enter to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from classes.classes import Node, Stack
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Проверка Node
+n1 = Node(5, None)
+n2 = Node('a', n1)
+print(n1.data)
+print(n2.data)
+print(n1)
+print(n2.next_node)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Проверка Stack
+stack = Stack()
+stack.push('data1')
+stack.push('data2')
+stack.push('data3')
+print(stack.top.data)
+print(stack.top.next_node.data)
+print(stack.top.next_node.next_node.data)
+print(stack.top.next_node.next_node.next_node)
+print(stack.top.next_node.next_node.next_node.data)
