@@ -26,3 +26,13 @@ class Stack():
         curr_top = self.top
         self.top = Node(node)
         self.top.next_node = curr_top
+
+
+    def pop(self):
+        """Удаляет из стека верхний элемент,
+         возвращает данные удаленного экземпляра класса Node"""
+        if self.top is None:
+            return None
+        value = self.top
+        self.top = self.top.next_node
+        return value.data
