@@ -3,7 +3,6 @@ from classes.classes import Node, Stack
 
 
 class TestNode(unittest.TestCase):
-
     def setUp(self):
         self.node_1 = Node(1)
 
@@ -24,6 +23,7 @@ class TestStack(unittest.TestCase):
     def setUp(self) -> None:
         self.stack_1 = Stack(1)
         self.stack_2 = Stack()
+        self.stack_3 = Stack()
 
 
     def test_stack_init(self):
@@ -40,4 +40,18 @@ class TestStack(unittest.TestCase):
         assert self.stack_2.top.data == 3
         assert self.stack_2.top.next_node.data == 2
         assert self.stack_2.top.next_node.next_node.data == 1
+
+
+    def test_stack_push(self):
+        """Тестирует работу метода pop"""
+        self.stack_2.push('data1')
+        data = self.stack_2.pop()
+        assert self.stack_2.top is None
+        assert data == 'data1'
+
+        self.stack_3.push('data1')
+        self.stack_3.push('data2')
+        data = self.stack_3.pop()
+        assert self.stack_3.top.data == 'data1'
+        assert data == 'data2'
 
