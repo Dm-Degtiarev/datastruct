@@ -54,4 +54,3 @@ class TestStack(unittest.TestCase):
         data = self.stack_3.pop()
         assert self.stack_3.top.data == 'data1'
         assert data == 'data2'
-
