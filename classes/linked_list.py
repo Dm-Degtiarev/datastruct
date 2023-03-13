@@ -5,7 +5,7 @@ class Node:
         :param data: словарь с данными
         :param next_node: ссылка на следующий узел
         """
-        self.data = dict(data)
+        self.data = data
         self.next_node = next_node
 
 class LinkedList:
@@ -52,5 +52,25 @@ class LinkedList:
         print(ll_string)
         return ll_string
 
+    def to_list(self):
+        """Возвращает элементы односвязного списка в виде списка"""
+        ll_list = list()
+        node = self.left
+
+        while node:
+            ll_list.append(node.data)
+            node = node.next_node
+
+        return  ll_list
+
+    def get_data_by_id(self, inp_value):
+        """Возвращает первый элемент списка, где значение id = inp_value"""
+        try:
+            for dict in self.to_list():
+                if dict['id'] == inp_value:
+                    return dict
+                    break
+        except TypeError:
+            print('Данные не являются словарем или в словаре нет id')
 
 
